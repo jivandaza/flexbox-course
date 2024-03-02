@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-direction and Flex-wrap</title>
+
+    <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png">
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        h1 {
+            text-align: center;
+            color: rgb(43, 125, 226);
+        }
+        .container {
+            background-color: #333;
+            height: 30vh;
+            padding: 6px;
+            margin: 6px;
+            display: flex;
+        }
+        .item {
+            background-color: #666;
+            width: 20%;
+            height: 20%;
+            border: medium solid #999;
+        }
+        .row {
+            /* flex-direction: row -> value default */
+            flex-direction: row;
+        }
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .column-reverse {
+            flex-direction: column-reverse;
+        }
+        .nowrap {
+            /* Define la alineación de los hijos en una sola linea */
+            /* flex-wrap: nowrap -> value default */
+            flex-wrap: nowrap;
+        }
+        .wrap {
+            /* Define la alineación de los hijos en varias lineas 
+            depenpiendo su anchura y altura */
+            flex-wrap: wrap;
+        }
+        .wrap-reverse {
+            /* Define la alineación de los hijos en varias lineas 
+            depenpiendo su anchura y altura, revierte los hijos */
+            flex-wrap: wrap-reverse;
+        }
+        .flex-flow {
+            /* shorthand para las propiedades flex-direction flex-wrap */
+            flex-flow: column wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Row</h1>
+    <section class="container row">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+    </section>
+    <h1>Row Reverse</h1>
+    <section class="container row-reverse">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+    </section>
+    <h1>Column</h1>
+    <section class="container column">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+    </section>
+    <h1>Column Reverse</h1>
+    <section class="container column-reverse">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+    </section>
+    <h1>Row and Nowrap</h1>
+    <section class="container row nowrap">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Row and Wrap</h1>
+    <section class="container row wrap">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Row and Wrap-reverse</h1>
+    <section class="container row wrap-reverse">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Row-reverse and Wrap-reverse</h1>
+    <section class="container row-reverse wrap-reverse">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Column and Nowrap</h1>
+    <section class="container column nowrap">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+    </section>
+    <h1>Column and Wrap</h1>
+    <section class="container column wrap">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Column and Wrap-reverse</h1>
+    <section class="container column wrap-reverse">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Column-reverse and Wrap-reverse</h1>
+    <section class="container column-reverse wrap-reverse">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+    <h1>Shortcut: Flex-flow</h1>
+    <section class="container flex-flow">
+        <article class="item">Item 1</article>
+        <article class="item">Item 2</article>
+        <article class="item">Item 3</article>
+        <article class="item">Item 4</article>
+        <article class="item">Item 5</article>
+        <article class="item">Item 6</article>
+        <article class="item">Item 7</article>
+        <article class="item">Item 8</article>
+        <article class="item">Item 9</article>
+        <article class="item">Item 10</article>
+        <article class="item">Item 11</article>
+        <article class="item">Item 12</article>
+        <article class="item">Item 13</article>
+        <article class="item">Item 14</article>
+        <article class="item">Item 15</article>
+        <article class="item">Item 16</article>
+        <article class="item">Item 17</article>
+        <article class="item">Item 18</article>
+        <article class="item">Item 19</article>
+    </section>
+</body>
+</html>

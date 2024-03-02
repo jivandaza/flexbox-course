@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FlexBox y Bootstrap</title>
+
+        <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png" />
+        <link
+            rel="stylesheet"
+            href="./bootstrap-5.1.3-dist/css/bootstrap.min.css"
+        />
+
+        <style>
+            .hero-image {
+                min-height: 80vh;
+                width: 100%;
+                background-image: url("./assets/wallpaper.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .hero-image div {
+                min-height: inherit;
+                display: flex;
+                background-color: rgba(0, 0, 0, 0.75);
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon bg-color-secondary"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="#"
+                                >Home</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true"
+                                >Disabled</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="flex-grow-1">
+            <h1 class="text-center my-2">Welcome FlexBox & Bootstrap</h1>
+            <section
+                class="bg-info text-white d-flex flex-column align-items-center flex-lg-row justify-content-lg-evenly my-2"
+            >
+                <article>Flex Item 1</article>
+                <article>Flex Item 2</article>
+                <article>Flex Item 3</article>
+                <article>Flex Item 4</article>
+                <article>Flex Item 5</article>
+            </section>
+            <section class="hero-image min-vh-100 text-white img-fluid my-2">
+                <div class="min-vh-100 d-flex justify-content-center align-items-center">
+                    <h2 class="text-center">FlexBox & Bootstrap is AWESOME COOL!!</h2>
+                </div>
+            </section>
+            <div class="container">
+                <section class="row my-2">
+                    <article class="col-12 col-lg-6 d-flex flex-column justify-content-evenly order-lg-1">
+                        <h2 class="text-end mx-2">Titulo Uno</h2>
+                        <p class="text-end mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                    </article>
+                    <article class="col-12 col-lg-6">
+                        <img src="./assets/img-1.jpg" alt="Foto 1" height="400" class="img-fluid w-100">
+                    </article>
+                </section>
+                <section class="row my-2">
+                    <article class="col-12 col-lg-6 d-flex flex-column justify-content-evenly">
+                        <h2 class="text-end mx-2">Titulo Dos</h2>
+                        <p class="text-end mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                    </article>
+                    <article class="col-12 col-lg-6">
+                        <img src="./assets/img-2.jpg" alt="Foto 1" height="400" class="img-fluid w-100">
+                    </article>
+                </section>
+                <section class="row d-flex flex-row-reverse my-2">
+                    <article class="col-12 col-lg-6 d-flex flex-column justify-content-evenly">
+                        <h2 class="text-end mx-2">Titulo Dos</h2>
+                        <p class="text-end mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                    </article>
+                    <article class="col-12 col-lg-6">
+                        <img src="./assets/img-2.jpg" alt="Foto 1" height="400" class="img-fluid w-100">
+                    </article>
+                </section>
+                <section class="row my-2">
+                    <article class="col-12 col-lg-6 d-flex flex-column justify-content-evenly">
+                        <h2 class="text-end mx-2">Titulo Uno</h2>
+                        <p class="text-end mx-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                    </article>
+                    <article class="col-12 col-lg-6">
+                        <img src="./assets/img-1.jpg" alt="Foto 1" height="400" class="img-fluid w-100">
+                    </article>
+                </section>
+            </div>
+        </main>
+        <footer class="bg-dark text-white text-center">
+            <h2>Sticky Footer con Bootstrap</h2>
+        </footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

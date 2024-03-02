@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alineación del Cross Axis (Row Align-content)</title>
+
+    <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        color: rgb(43, 125, 226);
+      }
+      .container {
+        background-color: #333;
+        height: 30vh;
+        padding: 6px;
+        margin: 6px;
+        display: flex;
+      }
+      .container-large {
+        background-color: #333;
+        height: 50vh;
+        padding: 6px;
+        margin: 6px;
+        display: flex;
+      }
+      .item {
+        background-color: #666;
+        width: 20%;
+        height: 20%;
+        border: medium solid #999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .item-large {
+        background-color: #666;
+        width: 120px;
+        /* height: 20; */
+        border: medium solid #999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      } 
+      p {
+        padding: 6px;
+        margin: 6px;
+      }
+      .row {
+        flex-direction: row;
+      }
+      .row-reverse {
+        flex-direction: row-reverse;
+      }
+      .nowrap {
+        flex-wrap: nowrap;
+      }
+      .wrap {
+        flex-wrap: wrap;
+      }
+      .wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+      .justify-content-start {
+        justify-content: flex-start;
+      }
+      .justify-content-end {
+        justify-content: flex-end;
+      }
+      .justify-content-center {
+        justify-content: center;
+      }
+      .justify-content-between {
+        justify-content: space-between;
+      }
+      .justify-content-around {
+        justify-content: space-around;
+      }
+      .justify-content-evenly {
+        justify-content: space-evenly;
+      }
+      .align-items-stretch {
+        align-items: stretch;
+      }
+      .align-items-start {
+        align-items: flex-start;
+      }
+      .align-items-end {
+        align-items: flex-end;
+      }
+      .align-items-center {
+        align-items: center;
+      }
+      .align-items-baseline {
+        align-items: baseline;
+      }
+      .align-content-start {
+        /*  Define la alineación de los hijos en el eje transversal (cross-axis)
+                NO funciona cuando los hijos esta en UNA sola linea (nowrap) */
+        /* align-content: flex-start -> value default */
+        align-content: flex-start;
+      }
+      .align-content-center {
+        align-content: center;
+      }
+      .align-content-end {
+        align-content: flex-end;
+      }
+      .align-content-between {
+        align-content: space-between;
+      }
+      .align-content-around {
+        align-content: space-around;
+      }
+      .align-content-evenly {
+        align-content: space-evenly;
+      }
+      .align-content-stretch {
+        align-content: stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Row Nowrap Justify-content-start Align-items-center Align-content-start
+    </h1>
+    <p>
+      Recordar que align content NO funciona cuando los hijos esta en UNA sola
+      linea (nowrap)
+    </p>
+    <section
+      class="container row nowrap justify-content-start align-items-center align-content-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-star Align-content-start</h1>
+    <p>
+      Recordar que align content SI funciona cuando los hijos esta en diferentes
+      lineas (wrap o wrap-reverse)
+    </p>
+    <section
+      class="container row wrap justify-content-start align-content-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-star Align-content-center</h1>
+    <section
+      class="container row wrap justify-content-start align-content-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-star Align-content-end</h1>
+    <section class="container row wrap justify-content-start align-content-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-content-start</h1>
+    <section
+      class="container row wrap justify-content-center align-content-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-content-center</h1>
+    <section
+      class="container row wrap justify-content-center align-content-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-content-end</h1>
+    <section
+      class="container row wrap justify-content-center align-content-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-content-start</h1>
+    <section class="container row wrap justify-content-end align-content-start">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-content-center</h1>
+    <section
+      class="container row wrap justify-content-end align-content-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-content-end</h1>
+    <section class="container row wrap justify-content-end align-content-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-center Align-content-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-center align-content-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-center Align-content-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-center align-content-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-between Align-content-center</h1>
+    <section
+      class="container row wrap justify-content-between align-content-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-content-between</h1>
+    <section
+      class="container-large row wrap justify-content-start align-content-between"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+      <article class="item">Item 4</article>
+      <article class="item">Item 5</article>
+      <article class="item">Item 6</article>
+      <article class="item">Item 7</article>
+      <article class="item">Item 8</article>
+      <article class="item">Item 9</article>
+      <article class="item">Item 10</article>
+      <article class="item">Item 11</article>
+      <article class="item">Item 12</article>
+      <article class="item">Item 13</article>
+      <article class="item">Item 14</article>
+      <article class="item">Item 15</article>
+      <article class="item">Item 16</article>
+      <article class="item">Item 17</article>
+      <article class="item">Item 18</article>
+      <article class="item">Item 19</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-content-start</h1>
+    <section
+      class="container-large row wrap justify-content-start align-content-start"
+    >
+      <article class="item-large">Item 1</article>
+      <article class="item-large">Item 2</article>
+      <article class="item-large">Item 3</article>
+      <article class="item-large">Item 4</article>
+      <article class="item-large">Item 5</article>
+      <article class="item-large">Item 6</article>
+      <article class="item-large">Item 7</article>
+      <article class="item-large">Item 8</article>
+      <article class="item-large">Item 9</article>
+      <article class="item-large">Item 10</article>
+      <article class="item-large">Item 11</article>
+      <article class="item-large">Item 12</article>
+      <article class="item-large">Item 13</article>
+      <article class="item-large">Item 14</article>
+      <article class="item-large">Item 15</article>
+      <article class="item-large">Item 16</article>
+      <article class="item-large">Item 17</article>
+      <article class="item-large">Item 18</article>
+      <article class="item-large">Item 19</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-content-center</h1>
+    <section
+      class="container-large row wrap justify-content-start align-content-center"
+    >
+      <article class="item-large">Item 1</article>
+      <article class="item-large">Item 2</article>
+      <article class="item-large">Item 3</article>
+      <article class="item-large">Item 4</article>
+      <article class="item-large">Item 5</article>
+      <article class="item-large">Item 6</article>
+      <article class="item-large">Item 7</article>
+      <article class="item-large">Item 8</article>
+      <article class="item-large">Item 9</article>
+      <article class="item-large">Item 10</article>
+      <article class="item-large">Item 11</article>
+      <article class="item-large">Item 12</article>
+      <article class="item-large">Item 13</article>
+      <article class="item-large">Item 14</article>
+      <article class="item-large">Item 15</article>
+      <article class="item-large">Item 16</article>
+      <article class="item-large">Item 17</article>
+      <article class="item-large">Item 18</article>
+      <article class="item-large">Item 19</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-content-between</h1>
+    <section
+      class="container-large row wrap justify-content-start align-content-between"
+    >
+      <article class="item-large">Item 1</article>
+      <article class="item-large">Item 2</article>
+      <article class="item-large">Item 3</article>
+      <article class="item-large">Item 4</article>
+      <article class="item-large">Item 5</article>
+      <article class="item-large">Item 6</article>
+      <article class="item-large">Item 7</article>
+      <article class="item-large">Item 8</article>
+      <article class="item-large">Item 9</article>
+      <article class="item-large">Item 10</article>
+      <article class="item-large">Item 11</article>
+      <article class="item-large">Item 12</article>
+      <article class="item-large">Item 13</article>
+      <article class="item-large">Item 14</article>
+      <article class="item-large">Item 15</article>
+      <article class="item-large">Item 16</article>
+      <article class="item-large">Item 17</article>
+      <article class="item-large">Item 18</article>
+      <article class="item-large">Item 19</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-content-around</h1>
+    <section
+      class="container-large row wrap justify-content-end align-content-around"
+    >
+      <article class="item-large">Item 1</article>
+      <article class="item-large">Item 2</article>
+      <article class="item-large">Item 3</article>
+      <article class="item-large">Item 4</article>
+      <article class="item-large">Item 5</article>
+      <article class="item-large">Item 6</article>
+      <article class="item-large">Item 7</article>
+      <article class="item-large">Item 8</article>
+      <article class="item-large">Item 9</article>
+      <article class="item-large">Item 10</article>
+      <article class="item-large">Item 11</article>
+      <article class="item-large">Item 12</article>
+      <article class="item-large">Item 13</article>
+      <article class="item-large">Item 14</article>
+      <article class="item-large">Item 15</article>
+      <article class="item-large">Item 16</article>
+      <article class="item-large">Item 17</article>
+      <article class="item-large">Item 18</article>
+      <article class="item-large">Item 19</article>
+    </section>
+  </body>
+</html>

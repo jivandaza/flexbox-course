@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sticky Footer Using Flexbox</title>
+
+        <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png" />
+
+        <style>
+            *,
+            *::after,
+            *::before {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            h2 {
+                text-align: center;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+            main {
+                flex-grow: 1;
+            }
+            .titulars {
+                padding: 1rem;
+                background: #222;
+                color: #eee;
+            }
+            .menu ul {
+                list-style-type: none;
+            }
+            .menu li {
+                padding: 0.5rem;
+            }
+            .header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-image {
+                min-height: 80vh;
+                width: 100%;
+                background-image: url("./assets/wallpaper.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: #fff;
+            }
+            .hero-image div {
+                min-height: inherit;
+                display: flex;
+                background-color: rgba(0, 0, 0, 0.75);
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-image h1 {
+                font-size: 5vh;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            .flex-item {
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+            .flex-item p {
+                margin-top: 1rem;
+                text-align: end;
+            }
+            .flex-item:nth-child(2) {
+                display: flex;
+                justify-content: center;
+            }
+            .flex-responsive{
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .flex-responsive-item {
+                border: thin solid gray;
+                flex: 1 1 200px;
+            }
+            @media screen and (min-width: 1024px) {
+                .header {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                .menu ul {
+                    display: flex;
+                }
+                .menu li {
+                    padding: 0.5rem;
+                }
+                .flex-container {
+                    display: flex;
+                }
+                .flex-item {
+                    flex: 0 0 50%;
+                }
+                .flex-item:nth-child(1) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                }
+                .flex-item h2 {
+                    text-align: end;
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                .flex-item p {
+                    text-align: end;
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                .flex-item img {
+                    display: flex;
+                    justify-content: stretch;
+                    width: 100%;
+                }
+                .flex-order-1 {
+                    order: 1;
+                }
+                .flex-row-reverse {
+                    flex-direction: row-reverse;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="titulars header">
+            <div class="logo">Jivandaza</div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="">Sobre Mi</a></li>
+                    <li><a href="">Experiencia</a></li>
+                    <li><a href="">Proyectos</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article class="hero-image">
+                <div>
+                    <h2>Flexbox is COOL!!</h2>
+                </div>
+            </article>
+            <section class="flex-container">
+                <article class="flex-item flex-order-1">
+                    <h2>Titulo Uno</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                </article>
+                <article class="flex-item">
+                    <img src="./assets/img-1.jpg" alt="Foto 1" width="400" height="400">
+                </article>
+            </section>
+            <section class="flex-container">
+                <article class="flex-item">
+                    <h2>Titulo Dos</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                </article>
+                <article class="flex-item">
+                    <img src="./assets/img-2.jpg" alt="Foto 2" width="400" height="400">
+                </article>
+            </section>
+            <section class="flex-container flex-row-reverse">
+                <article class="flex-item">
+                    <h2>Titulo Dos</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                </article>
+                <article class="flex-item">
+                    <img src="./assets/img-2.jpg" alt="Foto 2" width="400" height="400">
+                </article>
+            </section>
+            <section class="flex-container">
+                <article class="flex-item">
+                    <h2>Titulo Uno</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint hic ad rerum quisquam vero omnis enim aliquid corrupti nulla asperiores suscipit, inventore optio, ducimus eveniet repellat explicabo unde possimus. Ipsa!</p>
+                </article>
+                <article class="flex-item">
+                    <img src="./assets/img-1.jpg" alt="Foto 1" width="400" height="400">
+                </article>
+            </section>
+            <h2>Flex Responsive Sin Media Queries</h2>
+            <section class="flex-responsive">
+                <article class="flex-responsive-item">Item Responsive 1</article>
+                <article class="flex-responsive-item">Item Responsive 2</article>
+                <article class="flex-responsive-item">Item Responsive 3</article>
+                <article class="flex-responsive-item">Item Responsive 4</article>
+                <article class="flex-responsive-item">Item Responsive 5</article>
+                <article class="flex-responsive-item">Item Responsive 6</article>
+                <article class="flex-responsive-item">Item Responsive 7</article>
+                <article class="flex-responsive-item">Item Responsive 8</article>
+                <article class="flex-responsive-item">Item Responsive 9</article>
+                <article class="flex-responsive-item">Item Responsive 10</article>
+                <article class="flex-responsive-item">Item Responsive 11</article>
+                <article class="flex-responsive-item">Item Responsive 12</article>
+                <article class="flex-responsive-item">Item Responsive 13</article>
+                <article class="flex-responsive-item">Item Responsive 14</article>
+                <article class="flex-responsive-item">Item Responsive 15</article>
+                <article class="flex-responsive-item">Item Responsive 16</article>
+                <article class="flex-responsive-item">Item Responsive 17</article>
+                <article class="flex-responsive-item">Item Responsive 18</article>
+                <article class="flex-responsive-item">Item Responsive 19</article>
+            </section>
+        </main>
+        <footer class="titulars">
+            <h2>Sticky Footer</h2>
+        </footer>
+    </body>
+</html>

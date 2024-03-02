@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factor de Crecimiento (flex-grow)</title>
+
+    <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #333;
+            height: 30vh;
+            width: 1000px;
+            margin: 6px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: flex-start;
+        }
+        .item-0 {
+            background-color: #666;
+            width: 100px;
+            border: medium solid #999;
+            /*  Cuando la caja flexbox tenga espacio sobrante, es la habilidad
+                o el factor de crecer, NO se aceptan valores negativos */
+            /*  flex-grow: 0 -> value default  */
+            flex-grow: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-1 {
+            background-color: #666;
+            width: 100px;
+            border: medium solid #999;
+            /*  Espacio sobrante = 700px ahora 700px / 3 grow = 233.33
+                233.33 + 100px de 1 item = 333.33px equivale a cada item  */
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-2 {
+            background-color: #666;
+            width: 100px;
+            border: medium solid #999;
+            /*  Espacio sobrante = 700px ahora 700px / 4 grow = 175
+                175*1 + 100px del item 1 y 3 = 275px */
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-2:nth-child(2) {
+            /*  175*2 + 100px del item 2 = 450px */
+            flex-grow: 2;
+        }
+        .item-3 {
+            background-color: #666;
+            width: 100px;
+            border: medium solid #999;
+            /*  Espacio sobrante = 700px ahora 700px / 5 grow = 140
+                140*1 + 100px del item 1 y 3 = 240px  */
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-3:nth-child(2) {
+            /*  140*3 + 100px del item 2 = 520px */
+            flex-grow: 3;
+        }
+        .item-4 {
+            background-color: #666;
+            width: 100px;
+            border: medium solid #999;
+            /*  Espacio sobrante = 700px ahora 700px / 6 grow = 116.67
+                116.67*1 + 100px del item 1 = 216.67px  */
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-4:nth-child(2) {
+            /*  116.67*2 + 100px del item 2 = 333.33px */
+            flex-grow: 2;
+        }
+        .item-4:nth-child(3) {
+            /*  116.67*3 + 100px del item 3 = 450px */
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    <section
+      class="container"
+    >
+      <article class="item-0">Item 1</article>
+      <article class="item-0">Item 2</article>
+      <article class="item-0">Item 3</article>
+    </section>
+    <section
+      class="container"
+    >
+      <article class="item-1">Item 1</article>
+      <article class="item-1">Item 2</article>
+      <article class="item-1">Item 3</article>
+    </section>
+    <section
+      class="container"
+    >
+      <article class="item-2">Item 1</article>
+      <article class="item-2">Item 2</article>
+      <article class="item-2">Item 3</article>
+    </section>
+    <section
+      class="container"
+    >
+      <article class="item-3">Item 1</article>
+      <article class="item-3">Item 2</article>
+      <article class="item-3">Item 3</article>
+    </section>
+    <section
+      class="container"
+    >
+      <article class="item-4">Item 1</article>
+      <article class="item-4">Item 2</article>
+      <article class="item-4">Item 3</article>
+    </section>
+</body>
+</html>

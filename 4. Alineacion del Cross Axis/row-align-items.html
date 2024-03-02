@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alineación del Cross Axis (Row Align-items)</title>
+
+    <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png" />
+
+    <style>
+      h1 {
+        text-align: center;
+        color: rgb(43, 125, 226);
+      }
+      .container {
+        background-color: #333;
+        height: 30vh;
+        padding: 6px;
+        margin: 6px;
+        display: flex;
+      }
+      .item {
+        background-color: #666;
+        width: 20%;
+        height: 20%;
+        border: medium solid #999;
+      }
+      .item-stretch {
+        background-color: #666;
+        border: medium solid #999;
+      }
+      .item-baseline {
+        background-color: #666;
+        border: medium solid #999;
+      }
+      .item-baseline:nth-child(2) {
+        font-size: 250%;
+      }
+      .row {
+        flex-direction: row;
+      }
+      .row-reverse {
+        flex-direction: row-reverse;
+      }
+      .wrap {
+        flex-wrap: wrap;
+      }
+      .wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+      .justify-content-start {
+        justify-content: flex-start;
+      }
+      .justify-content-end {
+        justify-content: flex-end;
+      }
+      .justify-content-center {
+        justify-content: center;
+      }
+      .justify-content-between {
+        justify-content: space-between;
+      }
+      .justify-content-around {
+        justify-content: space-around;
+      }
+      .justify-content-evenly {
+        justify-content: space-evenly;
+      }
+      .align-items-stretch {
+        /*  Define la alineación de los hijos en el eje transversal (cross-axis),
+            dentro de cada linea */
+        /* align-items: stretch -> value default */
+        align-items: stretch;
+      }
+      .align-items-start {
+        align-items: flex-start;
+      }
+      .align-items-end {
+        align-items: flex-end;
+      }
+      .align-items-center {
+        align-items: center;
+      }
+      .align-items-baseline {
+        align-items: baseline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Row Wrap Justify-content-center Align-items-baseline</h1>
+    <section
+      class="container row wrap justify-content-center align-items-baseline"
+    >
+      <article class="item-baseline">Item 1</article>
+      <article class="item-baseline">Item 2</article>
+      <article class="item-baseline">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-items-stretch</h1>
+    <section
+      class="container row wrap justify-content-start align-items-stretch"
+    >
+      <article class="item-stretch">Item 1</article>
+      <article class="item-stretch">Item 2</article>
+      <article class="item-stretch">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-end Align-items-stretch</h1>
+    <section
+      class="container row-reverse wrap justify-content-end align-items-stretch"
+    >
+      <article class="item-stretch">Item 1</article>
+      <article class="item-stretch">Item 2</article>
+      <article class="item-stretch">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-items-stretch</h1>
+    <section class="container row wrap justify-content-end align-items-stretch">
+      <article class="item-stretch">Item 1</article>
+      <article class="item-stretch">Item 2</article>
+      <article class="item-stretch">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-start Align-items-stretch</h1>
+    <section
+      class="container row-reverse wrap justify-content-start align-items-stretch"
+    >
+      <article class="item-stretch">Item 1</article>
+      <article class="item-stretch">Item 2</article>
+      <article class="item-stretch">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-items-stretch</h1>
+    <section
+      class="container row wrap justify-content-center align-items-stretch"
+    >
+      <article class="item-stretch">Item 1</article>
+      <article class="item-stretch">Item 2</article>
+      <article class="item-stretch">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-center Align-items-stretch</h1>
+    <section
+      class="container row-reverse wrap justify-content-center align-items-stretch"
+    >
+      <article class="item-stretch">Item 1</article>
+      <article class="item-stretch">Item 2</article>
+      <article class="item-stretch">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-items-start</h1>
+    <section class="container row wrap justify-content-start align-items-start">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-items-center</h1>
+    <section
+      class="container row wrap justify-content-start align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-start Align-items-end</h1>
+    <section class="container row wrap justify-content-start align-items-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-end Align-items-start</h1>
+    <section
+      class="container row-reverse wrap justify-content-end align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-end Align-items-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-end align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-end Align-items-end</h1>
+    <section
+      class="container row-reverse wrap justify-content-end align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-items-start</h1>
+    <section class="container row wrap justify-content-end align-items-start">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-items-center</h1>
+    <section class="container row wrap justify-content-end align-items-center">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-end Align-items-end</h1>
+    <section class="container row wrap justify-content-end align-items-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-start Align-items-start</h1>
+    <section
+      class="container row-reverse wrap justify-content-start align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-start Align-items-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-start align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-start Align-items-end</h1>
+    <section
+      class="container row-reverse wrap justify-content-start align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-items-start</h1>
+    <section
+      class="container row wrap justify-content-center align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-items-center</h1>
+    <section
+      class="container row wrap justify-content-center align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-center Align-items-end</h1>
+    <section class="container row wrap justify-content-center align-items-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-center Align-items-start</h1>
+    <section
+      class="container row-reverse wrap justify-content-center align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-center Align-items-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-center align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-center Align-items-end</h1>
+    <section
+      class="container row-reverse wrap justify-content-center align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-start Align-items-start</h1>
+    <section
+      class="container row wrap-reverse justify-content-start align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-start Align-items-center</h1>
+    <section
+      class="container row wrap-reverse justify-content-start align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-start Align-items-end</h1>
+    <section
+      class="container row wrap-reverse justify-content-start align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-end Align-items-start</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-end align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-end Align-items-center</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-end align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-end Align-items-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-end align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-end Align-items-start</h1>
+    <section
+      class="container row wrap-reverse justify-content-end align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-end Align-items-center</h1>
+    <section
+      class="container row wrap-reverse justify-content-end align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-end Align-items-end</h1>
+    <section
+      class="container row wrap-reverse justify-content-end align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-start Align-items-start</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-start align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-start Align-items-center</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-start align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-start Align-items-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-start align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-center Align-items-start</h1>
+    <section
+      class="container row wrap-reverse justify-content-center align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-center Align-items-center</h1>
+    <section
+      class="container row wrap-reverse justify-content-center align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-center Align-items-end</h1>
+    <section
+      class="container row wrap-reverse justify-content-center align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-center Align-items-start</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-center align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-center Align-items-center</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-center align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-center Align-items-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-center align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-between Align-items-start</h1>
+    <section
+      class="container row wrap justify-content-between align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-between Align-items-center</h1>
+    <section
+      class="container row wrap justify-content-between align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-between Align-items-end</h1>
+    <section class="container row wrap justify-content-between align-items-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-between Align-items-start</h1>
+    <section
+      class="container row-reverse wrap justify-content-between align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-between Align-items-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-between align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-between Align-items-end</h1>
+    <section
+      class="container row-reverse wrap justify-content-between align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-between Align-items-start</h1>
+    <section
+      class="container row wrap-reverse justify-content-between align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-between Align-items-center</h1>
+    <section
+      class="container row wrap-reverse justify-content-between align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-between Align-items-end</h1>
+    <section
+      class="container row wrap-reverse justify-content-between align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-between Align-items-start</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-between align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-between Align-items-center</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-between align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-between Align-items-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-between align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-around Align-items-start</h1>
+    <section
+      class="container row wrap justify-content-around align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-around Align-items-center</h1>
+    <section
+      class="container row wrap justify-content-around align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-around Align-items-end</h1>
+    <section class="container row wrap justify-content-around align-items-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-around Align-items-start</h1>
+    <section
+      class="container row-reverse wrap justify-content-around align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-around Align-items-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-around align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-around Align-items-end</h1>
+    <section
+      class="container row-reverse wrap justify-content-around align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-around Align-items-start</h1>
+    <section
+      class="container row wrap-reverse justify-content-around align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-around Align-items-center</h1>
+    <section
+      class="container row wrap-reverse justify-content-around align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-around Align-items-end</h1>
+    <section
+      class="container row wrap-reverse justify-content-around align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-around Align-items-start</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-around align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-around Align-items-center</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-around align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-around Align-items-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-around align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-evenly Align-items-start</h1>
+    <section
+      class="container row wrap justify-content-evenly align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-evenly Align-items-center</h1>
+    <section
+      class="container row wrap justify-content-evenly align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap Justify-content-evenly Align-items-end</h1>
+    <section class="container row wrap justify-content-evenly align-items-end">
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-evenly Align-items-start</h1>
+    <section
+      class="container row-reverse wrap justify-content-evenly align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-evenly Align-items-center</h1>
+    <section
+      class="container row-reverse wrap justify-content-evenly align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap Justify-content-evenly Align-items-end</h1>
+    <section
+      class="container row-reverse wrap justify-content-evenly align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-evenly Align-items-start</h1>
+    <section
+      class="container row wrap-reverse justify-content-evenly align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-evenly Align-items-center</h1>
+    <section
+      class="container row wrap-reverse justify-content-evenly align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row Wrap-reverse Justify-content-evenly Align-items-end</h1>
+    <section
+      class="container row wrap-reverse justify-content-evenly align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-evenly Align-items-start</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-evenly align-items-start"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-evenly Align-items-center</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-evenly align-items-center"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+    <h1>Row-reverse Wrap-reverse Justify-content-evenly Align-items-end</h1>
+    <section
+      class="container row-reverse wrap-reverse justify-content-evenly align-items-end"
+    >
+      <article class="item">Item 1</article>
+      <article class="item">Item 2</article>
+      <article class="item">Item 3</article>
+    </section>
+  </body>
+</html>

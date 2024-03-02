@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamaño de los Hijos Flexbox (flex-basics)</title>
+
+    <link rel="Shortcut icon" href="./../0. Assets/flexbox-logo.png" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container-row {
+            background-color: #333;
+            height: 400px;
+            width: 100%;
+            margin: 6px;
+            padding: 6px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: flex-start;
+        }
+        .container-column {
+            background-color: #333;
+            height: 400px;
+            width: 100%;
+            margin: 6px;
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: flex-start;
+        }
+        .item {
+            background-color: #666;
+            border: medium solid #999;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .basics-auto{
+            /* flex-basis: auto -> value default */
+            flex-basis: auto;
+        }
+        .basics-100{
+            flex-basis: 100px; /*  */
+        }
+        .flex {
+            flex: 0 1 150px;
+        }
+    </style>
+</head>
+<body>
+    <section class="container-row">
+      <article class="item basics-auto">Item 1</article>
+      <article class="item basics-auto">Item 2</article>
+      <article class="item basics-auto">Item 3</article>
+    </section>
+    <section class="container-row">
+      <article class="item basics-100">Item 1</article>
+      <article class="item basics-100">Item 2</article>
+      <article class="item basics-100">Item 3</article>
+    </section>
+    <section class="container-column">
+      <article class="item basics-100">Item 1</article>
+      <article class="item basics-100">Item 2</article>
+      <article class="item basics-100">Item 3</article>
+    </section>
+    <section class="container-row">
+      <article class="item flex">Item 1</article>
+      <article class="item flex">Item 2</article>
+      <article class="item flex">Item 3</article>
+    </section>
+    <section class="container-column">
+      <article class="item flex">Item 1</article>
+      <article class="item flex">Item 2</article>
+      <article class="item flex">Item 3</article>
+    </section>
+</body>
+</html>
